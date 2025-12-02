@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clube - Home (clone)</title>
+
+  <style>
+    :root{
+      --red:#c8102e;
+      --dark:#111;
+      --light:#f5f5f5;
+      --muted:#777;
+      --container:1200px;
+      --gap:20px;
+      font-family: Inter, system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--light);color:var(--dark)}
+
+ 
+    .topbar{
+      background:linear-gradient(90deg,var(--red),#b00 70%);
+      color:white;
+      padding:12px 16px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{
+      width:56px;height:56px;border-radius:6px;background:#fff8;padding:6px;
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--red)
+    }
+    .nav{display:flex;gap:16px;align-items:center}
+    .nav a{color:white;text-decoration:none;font-weight:600}
+
+   
+    .container{
+      max-width:var(--container);
+      margin:24px auto;
+      padding:0 16px;
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:24px;
+    }
+
+    
+    .hero-main{
+      height:300px;
+      border-radius:12px;
+      position:relative;
+      overflow:hidden;
+      background:url('https://images.flamengo.com.br/public/images/banners/12/17645412882.jpeg') center/cover no-repeat;
+    }
+    .hero-overlay{
+      position:absolute;
+      bottom:20px;
+      left:20px;
+      color:white;
+      text-shadow:0 0 8px black;
+    }
+    .hero-overlay h1{
+      margin:4px 0 0;
+      font-size:26px;
+    }
+    .small{font-size:13px;color:var(--muted)}
+
+
+    .hero-side{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+    .card{
+      background:white;border-radius:8px;padding:14px;
+      box-shadow:0 4px 18px rgba(0,0,0,0.06)
+    }
+
+  
+    .grid{
+      grid-column:1 / -1;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:16px;
+    }
+    .article{background:white;padding:12px;border-radius:8px}
+    .article img{width:100%;height:160px;object-fit:cover;border-radius:6px}
+    .article h3{margin:8px 0 0;font-size:16px}
+    .article p{color:var(--muted);font-size:14px;margin:6px 0 0}
+
+    footer{
+      margin-top:40px;background:#111;color:white;padding:32px;text-align:center;
+    }
+
+    
+    @media(max-width:1000px){
+      .container{
+        grid-template-columns:1fr;
+      }
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+    }
+    @media(max-width:600px){
+      .grid{
+        grid-template-columns:1fr;
+      }
+      .brand .logo{width:44px;height:44px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">
+      <img src="https://www.flamengo.com.br/img/logos/logo-menu-md.png">
+    </div>
+    <div>
+      <div style="font-weight:800">Clube de Regatas</div>
+      <div class="small" style="color:#fff9">Notícias, futebol e muito mais</div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <a href="#">Futebol</a>
+    <a href="#">Basquete</a>
+    <a href="#">Remos</a>
+    <a href="#">Sócio-torcedor</a>
+  </nav>
+</header>
+
+
+
+<main class="container">
+
+
+  <section>
+    <div class="hero-main">
+      <div class="hero-overlay">
+        <div class="small" style="color:#eee">CAMPEONATO BRASILEIRO · 23/11/2025</div>
+        <h1>Flamengo vence e se torna tetracampeão da Libertadores</h1>
+        <p>Resumo da partida, festa da torcida e comemoração nas ruas do Rio de Janeiro.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <aside class="hero-side">
+
+    <div class="card">
+      <div class="small" style="color:var(--muted)">PRÓXIMO JOGO</div>
+
+      <div style="display:flex;justify-content:space-between;margin-top:10px">
+        <div class="small">Pinheiros x Flamengo</div>
+        <div class="small">02/12 — 19:00</div>
+      </div>
+
+      <div style="margin-top:12px;display:flex;justify-content:space-between">
+        <div class="small">Classificação</div>
+        <div class="small">Pts 75</div>
+      </div>
+    </div>
+
+<section style="margin:20px 0; background:white; padding:20px; border-radius:10px; box-shadow:0 4px 14px rgba(0,0,0,0.08);">
+  <h2 style="text-align:center; color:var(--red); margin-top:0;">Classificação - Brasileirão 2025</h2>
+
+  <table style="width:100%; border-collapse: collapse; margin-top:12px; font-size:14px;">
+    <thead>
+      <tr style="background:var(--red); color:#fff;">
+        <th style="padding:8px;">Pos</th>
+        <th style="padding:8px;">Time</th>
+        <th style="padding:8px;">Pts</th>
+        <th style="padding:8px;">J</th>
+        <th style="padding:8px;">V</th>
+        <th style="padding:8px;">E</th>
+        <th style="padding:8px;">D</th>
+        <th style="padding:8px;">GP</th>
+        <th style="padding:8px;">GC</th>
+        <th style="padding:8px;">SG</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr><td>1º</td><td>Flamengo</td><td>80</td><td>38</td><td>24</td><td>8</td><td>6</td><td>68</td><td>30</td><td>+38</td></tr>
+      <tr><td>2º</td><td>Palmeiras</td><td>78</td><td>38</td><td>23</td><td>9</td><td>6</td><td>66</td><td>29</td><td>+37</td></tr>
+      <tr><td>3º</td><td>São Paulo</td><td>73</td><td>38</td><td>21</td><td>10</td><td>7</td><td>55</td><td>33</td><td>+22</td></tr>
+      <tr><td>4º</td><td>Grêmio</td><td>66</td><td>38</td><td>18</td><td>12</td><td>8</td><td>51</td><td>34</td><td>+17</td></tr>
+      <tr><td>5º</td><td>Atlético-MG</td><td>64</td><td>38</td><td>17</td><td>13</td><td>8</td><td>50</td><td>32</td><td>+18</td></tr>
+      <tr><td>6º</td><td>Fluminense</td><td>59</td><td>38</td><td>15</td><td>14</td><td>9</td><td>48</td><td>37</td><td>+11</td></tr>
+      <tr><td>7º</td><td>Fortaleza</td><td>57</td><td>38</td><td>15</td><td>12</td><td>11</td><td>46</td><td>39</td><td>+7</td></tr>
+      <tr><td>8º</td><td>Botafogo</td><td>55</td><td>38</td><td>14</td><td>13</td><td>11</td><td>44</td><td>41</td><td>+3</td></tr>
+      <tr><td>9º</td><td>Internacional</td><td>54</td><td>38</td><td>14</td><td>12</td><td>12</td><td>42</td><td>38</td><td>+4</td></tr>
+      <tr><td>10º</td><td>Cruzeiro</td><td>52</td><td>38</td><td>13</td><td>13</td><td>12</td><td>40</td><td>38</td><td>+2</td></tr>
+
+      <tr><td>11º</td><td>Corinthians</td><td>51</td><td>38</td><td>13</td><td>12</td><td>13</td><td>39</td><td>41</td><td>-2</td></tr>
+      <tr><td>12º</td><td>Vasco</td><td>49</td><td>38</td><td>12</td><td>13</td><td>13</td><td>38</td><td>42</td><td>-4</td></tr>
+      <tr><td>13º</td><td>Bahia</td><td>47</td><td>38</td><td>12</td><td>11</td><td>15</td><td>37</td><td>44</td><td>-7</td></tr>
+      <tr><td>14º</td><td>Red Bull Bragantino</td><td>45</td><td>38</td><td>11</td><td>12</td><td>15</td><td>36</td><td>44</td><td>-8</td></tr>
+      <tr><td>15º</td><td>Athletico-PR</td><td>44</td><td>38</td><td>10</td><td>14</td><td>14</td><td>34</td><td>42</td><td>-8</td></tr>
+
+      <tr><td>16º</td><td>Cuiabá</td><td>42</td><td>38</td><td>10</td><td>12</td><td>16</td><td>33</td><td>46</td><td>-13</td></tr>
+
+  
+      <tr style="background:#ffe5e5;"><td>17º</td><td>Juventude</td><td>39</td><td>38</td><td>9</td><td>12</td><td>17</td><td>31</td><td>47</td><td>-16</td></tr>
+      <tr style="background:#ffe5e5;"><td>18º</td><td>Goiás</td><td>37</td><td>38</td><td>9</td><td>10</td><td>19</td><td>29</td><td>48</td><td>-19</td></tr>
+      <tr style="background:#ffe5e5;"><td>19º</td><td>Atlético-GO</td><td>34</td><td>38</td><td>8</td><td>10</td><td>20</td><td>28</td><td>51</td><td>-23</td></tr>
+      <tr style="background:#ffe5e5;"><td>20º</td><td>Vitória</td><td>30</td><td>38</td><td>7</td><td>9</td><td>22</td><td>27</td><td>52</td><td>-25</td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+    <div class="card">
+      <h4 style="margin:0 0 8px">Mais notícias</h4>
+      <ul style="list-style:none;margin:0;padding:0;font-size:14px;color:var(--muted)">
+        <li style="padding:6px 0;border-bottom:1px solid #eee">Bastidores do jogo</li>
+        <li style="padding:6px 0;border-bottom:1px solid #eee">Agenda do futebol feminino</li>
+        <li style="padding:6px 0">Notas oficiais</li>
+      </ul>
+    </div>
+
+  </aside>
+
+
+ 
+  <section class="grid">
+
+    <article class="article">
+      <img src="https://images.flamengo.com.br/public/images/fla-tv/1/176399294322.jpg">
+      <h3>Bastidores: Fla 3x0 RB Bragantino</h3>
+      <p class="small">Detalhes da coletiva e reação dos jogadores.</p>
+    </article>
+
+    <article class="article">
+      <img src="https://images.flamengo.com.br/public/images/galeria/4919/176373592824.jpg">
+      <h3>Preparação para a final da Copa</h3>
+      <p class="small">Treino tático e coletiva do técnico.</p>
+    </article>
+
+    <article class="article">
+      <img src="https://images.flamengo.com.br/public/images/artigos/36946/1764631963.jpg">
+      <h3>Novo uniforme é divulgado</h3>
+      <img src="https://images.flamengo.com.br/public/images/fla-tv/1/176218072564.jpg">
+
+      <p class="small">Lançamento oficial no Ninho do Urubu.</p>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwBa8F1mMbgRwWArXP9aGiRrQTBEJQUkS3UA&s">
+      
+    </article>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:14px;color:#f00606">Patrocinadores</div>
+    <div class="sponsors">
+      <!-- substitua pelos logos reais na pasta images/ -->
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/175578758679.png" alt="betano" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415452996.png" alt="adidas" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/17141546968.png" alt="brb" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415499953.png" alt="assistcard" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/175398283556.png" alt="hapvida" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415518459.png" alt="brahma" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/173386226090.png" alt="zedelivery" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/172545956936.png" alt="indrive" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/173695170490.png" alt="shopee" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/172737618810.png" alt="abc" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/175320601356.png" alt="mengo" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415587142.png" alt="texaco" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/176159609323.png" alt="axia" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/174301410822.png" alt="arfa" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415665768.png" alt="redDor" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415692325.png" alt="jj" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415685989.png" alt="institutoyduqs" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/175500586014.png" alt="ortobom" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171415715547.png" alt="vale" />
+     
+<footer>
+  <div class="container">
+    <div style="text-align:center;margin-bottom:14px;color:#f00606">Patrocinadores</div>
+    <div class="sponsors">
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171882195293.png" alt="granado" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/173582599173.png" alt="rcs" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/171882184676.png" alt="elite" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/172202008926.png" alt="tnt" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/173748745124.png" alt="escolaflamengo" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/174438299922.png" alt="pinheiroguimaraes" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/175641013619.png" alt="medley" />
+      <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/176468111033.png" alt="MM" />
+      
+      <footer>
+        <div class="container">
+          <div style="text-align:center;margin-bottom:14px;color:#f00606">apoio</div>
+          <div class="sponsors">
+            <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/176418125198.png" alt="cbc" />
+            <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/17625374571.png" alt="ministeriodoesporte" />
+            <img src="https://images.flamengo.com.br/public/images/patrocinadores-parceiros-apoio/176418147857.png" alt="gov" />
+         
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
